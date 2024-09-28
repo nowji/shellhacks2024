@@ -4,14 +4,50 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const bcrypt = require('bcrypt');
+const cookieParser = require('cookie-parser');
+const MongoStore = require('connect-mongo');
+const session = require('express-session');
+const jwt = require('jsonwebtoken');
+const jwtSecret = "shellhacks2024secret";
+
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
+app.use(cookieParser());
+
+const MONGODB_URI="mongodb+srv://jamesphillips052404:vHtSe8HWhKJYQDdF@cluster0.lfl2k.mongodb.net/"
+
+app.use(session({
+    secret: "shellhacks2024",
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({
+        mongoUrl: MONGODB_URI
+    })
+}))
 
 // Connecting to DB
 const connectDB = require('./server/config/db');
 connectDB();
 const User = require('./server/models/User');
 
+// Check if user has token
+/*const authMiddlewareLoggedOut = (req, res, next) => {
+    const token = req.cookies.token;
+
+    if(!token){
+        console.log("Not logged in");
+        return res.redirect('/login')
+    }
+
+    try{
+        const decoded = jwt.verify(token, jwtSecret);
+        req.userID = decoded.userID;
+        next();
+    } catch(error){
+        return res.redirect('login');
+    }
+}*/
 
 // Handle login
 app.post("/login", async (req, res) => {
