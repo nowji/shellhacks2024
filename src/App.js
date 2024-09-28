@@ -11,12 +11,10 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleLogin = () => {
-    // Simulate successful login by setting authentication to true
     setIsAuthenticated(true);
   };
 
   const handleLogout = () => {
-    // Simulate logout by setting authentication to false
     setIsAuthenticated(false);
   };
 
