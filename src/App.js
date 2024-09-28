@@ -4,6 +4,8 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
 import Info from './components/Info';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
 
 import './App.css';
 
@@ -19,8 +21,10 @@ function App() {
   };
 
   return (
-    <div className='App'>
+    
       <Router>
+        <Navbar loggedIn={isAuthenticated} onLogout={handleLogout}/>
+        <div className='App'>
         <Routes>
           <Route
             path="/login"
@@ -32,16 +36,21 @@ function App() {
           />
           <Route
             path="/dashboard"
-            element={isAuthenticated ? <Dashboard onLogout={handleLogout} /> : <Navigate to="/login" />}
+            element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />}
           />
           <Route
             path="/info"
             element={isAuthenticated ? <Info/> : <Navigate to="/info" />}
           />
-          <Route path="*" element={<Navigate to="/login" />} />
+          <Route
+            path="/home"
+            element={<Home />}
+          />
+          <Route path="*" element={<Navigate to="/home" />} />
         </Routes>
+        </div>
       </Router>
-    </div>
+    
   );
 }
 
