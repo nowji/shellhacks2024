@@ -12,7 +12,8 @@ function Register({ onLogin }) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (email && firstName  && lastName && (password === passwordDuplicate)) {
+        if (email && firstName  && lastName && password && passwordDuplicate) {
+          if(password === passwordDuplicate){
             const collectData = async () => {
                 const result = await fetch("http://localhost:8000/register", {
                     method: "POST",
@@ -23,14 +24,16 @@ function Register({ onLogin }) {
                 });
                 const data = await result.json();
                 console.warn(data);
+                return data;
             }
-            collectData();
+            let data = collectData();
+            data.success ? navigate('/login') : alert("Account creation failed, email already in use");
+          }
+          else{
+            alert("Passwords do not match");
+          }
+        }
 
-            navigate('/login');
-        }
-        else {
-            alert("Passwords Don't Match");
-        }
     };
 
     return (

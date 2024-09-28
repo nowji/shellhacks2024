@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/Info.css';
 
 function Info() {
   const [formData, setFormData] = useState({
@@ -98,7 +99,7 @@ function Info() {
           <input type="number" name="totalSavings" value={formData.totalSavings} onChange={handleChange} required />
         </div>
 
-        <button type="submit">Submit</button>
+        <button className='info-submit-button' type="submit">Submit</button>
       </form>
   </div>
   );

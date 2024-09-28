@@ -31,3 +31,7 @@ button{
   border-radius: 5px;
   padding: 4px;
 }
+button:hover{
+  cursor: pointer;
+  background-color: #051923;
+}

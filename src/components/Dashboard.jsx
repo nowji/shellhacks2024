@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/Dashboard.css';
 
 function Dashboard() {
 
@@ -10,10 +11,10 @@ function Dashboard() {
     };
 
     return (
-        <div>
+        <div className='dashboard-container'>
           <h2>Welcome to your Dashboard</h2>
           <h4>No information to display yet</h4>
-          <button onClick={handleBeginAnalysis}>Begin Analysis</button>
+          <button className='begin-analysis-button' onClick={handleBeginAnalysis}>Begin Analysis</button>
         </div>
       );
     }
