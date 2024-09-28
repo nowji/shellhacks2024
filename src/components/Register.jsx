@@ -13,8 +13,21 @@ function Register({ onLogin }) {
         e.preventDefault();
 
         if (email && firstName  && lastName && (password === passwordDuplicate)) {
+            const collectData = async () => {
+                const result = await fetch("http://localhost:8000/register", {
+                    method: "POST",
+                    body: JSON.stringify( { email, password, firstName, lastName }),
+                    headers:{
+                        'Content-Type':'application/json'
+                    }
+                });
+                const data = await result.json();
+                console.warn(data);
+            }
+            collectData();
+
             navigate('/login');
-        } 
+        }
         else {
             alert("Passwords Don't Match");
         }
