@@ -8,14 +8,29 @@ function Login({ onLogin }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.warn("Here");
+        const collectData = async () => {
+            const result = await fetch("http://localhost:8000/login", {
+                method: "POST",
+                body: JSON.stringify( { email, password }),
+                headers:{
+                    'Content-Type':'application/json'
+                }
+            });
+            const data = await result.json();
+            console.warn(data);
+        }
+        collectData();
 
-        if (email === 'a@a' && password === 'a') {
-            onLogin();  
+        /*if (email === 'a@a' && password === 'a') {
+            onLogin();
             navigate('/dashboard');
-        } 
+        }
         else {
             alert("Email or Password incorrect");
-        }
+        }*/
+
+        //navigate("/dashboard");
     };
 
     return (
