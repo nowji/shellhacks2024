@@ -1,12 +1,12 @@
 .home-container{
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   text-align: center;
-  padding: 20px;
-
+  padding: 5px;
 }
 
 .home-body-container{
@@ -22,8 +22,13 @@
 }
 .step{
     width: 25vw;
-    border: solid 3px #051923;
+    border: solid 3px #006494;
     justify-content: left; 
     margin: 2px;
     padding: 5px;
+}
+
+.step:hover{
+    background-color: #003554;
+    cursor: default;
 }
