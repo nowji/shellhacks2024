@@ -9,7 +9,7 @@ function Register({ onLogin }) {
     const [lastName, setLastName] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         if (email && firstName  && lastName && password && passwordDuplicate) {
@@ -26,7 +26,7 @@ function Register({ onLogin }) {
                 console.warn(data);
                 return data;
             }
-            let data = collectData();
+            let data = await collectData();
             data.success ? navigate('/login') : alert("Account creation failed, email already in use");
           }
           else{
