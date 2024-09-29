@@ -1,12 +1,16 @@
 .home-container{
+  margin-top: 30px;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 70vh;
   text-align: center;
   padding: 5px;
+  border: solid #0582CA 3px;
+  height: 100px;
+  background-image: linear-gradient(79deg, #006494, #0582CA, 10%#00A6FB);
 }
 
 .home-body-container{
