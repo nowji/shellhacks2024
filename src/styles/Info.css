@@ -8,6 +8,8 @@
     align-items: center;
     text-align: center;
     border: solid #051923 3px;
+    margin-top: 18vh;
+    margin-bottom: 5vh;
   }
 
 .info-submit-button{

@@ -1,5 +1,5 @@
 .home-container{
-  margin-top: 30px;
+  margin-top: 15vh;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
@@ -26,13 +26,16 @@
 .step{
     width: 25vw;
     border: solid 3px #006494;
+    border-radius: 20px;
     justify-content: left;
-    margin: 2px;
-    padding: 5px;
+    margin: 20px;
+    padding: 0px 20px;
+    background-color: #333;
+    color: #0582CA;
 }
 
 .step:hover{
-    background-color: #1c90d3;
+    background-color: #3e3e3e;
     cursor: default;
 }
 
