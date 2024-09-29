@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Home.css';
+import { callGeminiAPI } from './Gemini';
+
+
 
 function Home() {
+  const [prompt, setPrompt] = useState('');
+  const handleInputChange = (e) => {
+    setPrompt(e.target.value);
+  };
 
   return (
     <div className='home-container'>
@@ -15,6 +22,13 @@ function Home() {
             credit.
           </h3>
         </div>
+        <input 
+          type="text" 
+          value={prompt}
+          onChange={handleInputChange}
+          placeholder="Enter your prompt here..." 
+        />
+        <button onClick={() => callGeminiAPI(prompt)}>Run Gemini Test</button>
         <div className='steps-container'>
           <div className='step'>
             <h4>
