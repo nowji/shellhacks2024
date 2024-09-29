@@ -22,17 +22,17 @@
 .steps-container{
     width: 75vw;
     display: flex;
-    flex-direction: row;    
+    flex-direction: row;
 }
 .step{
     width: 25vw;
     border: solid 3px #006494;
-    justify-content: left; 
+    justify-content: left;
     margin: 2px;
     padding: 5px;
 }
 
 .step:hover{
-    background-color: #003554;
+    background-color: #1c90d3;
     cursor: default;
 }

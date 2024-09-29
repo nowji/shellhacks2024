@@ -35,7 +35,7 @@ function Dashboard() {
                 <h4>Country: {data.country}</h4>
               </div>
               <div className='info-bullet'>
-                <h4>Credit Debt: ${data.creditDebt}</h4>
+                <h4>Employment Status: {data.employmentStatus}</h4>
               </div>
               <div className='info-bullet'>
                 <h4>Credit Score: {data.creditScore}</h4>
@@ -44,22 +44,22 @@ function Dashboard() {
                 <h4>Credit Utilization: {data.creditUtilization}%</h4>
               </div>
               <div className='info-bullet'>
-                <h4>Employment Status: {data.employmentStatus}</h4>
-              </div>
-              <div className='info-bullet'>
-                <h4>Monthly Expenses: ${data.monthlyExpenses}</h4>
-              </div>
-              <div className='info-bullet'>
-                <h4>Monthly Income: ${data.monthlyIncome}</h4>
-              </div>
-              <div className='info-bullet'>
                 <h4>On Time Payments: {data.onTimePayments}%</h4>
               </div>
               <div className='info-bullet'>
                 <h4>Open Credit Accounts: {data.openCreditAccounts}</h4>
               </div>
               <div className='info-bullet'>
+                <h4>Credit Debt: ${data.creditDebt}</h4>
+              </div>
+              <div className='info-bullet'>
                 <h4>Other Debt: ${data.otherDebt}</h4>
+              </div>
+              <div className='info-bullet'>
+                <h4>Monthly Income: ${data.monthlyIncome}</h4>
+              </div>
+              <div className='info-bullet'>
+                <h4>Monthly Expenses: ${data.monthlyExpenses}</h4>
               </div>
               <div className='info-bullet'>
                 <h4>Total Savings: ${data.totalSavings}</h4>
