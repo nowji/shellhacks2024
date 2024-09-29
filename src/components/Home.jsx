@@ -41,10 +41,10 @@ ${JSON.stringify(data)}`;
   return (
     <div className='home-container'>
         <div className='home-title-container'>
-          <h1>Welcome to [Shellhacks Project Name]</h1>
+          <h1 class="title">Welcome to FinSight</h1>
         </div>
         <div className='home-body-container'>
-          <h3>
+          <h3 class="description">
             To help combat the lack of financial literacy, especially in minority and
             low income communities, we have made a web app designed to educate people about building
             credit.

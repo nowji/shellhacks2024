@@ -8,7 +8,6 @@
   min-height: 70vh;
   text-align: center;
   padding: 5px;
-  border: solid #0582CA 3px;
   height: 100px;
   background-image: linear-gradient(79deg, #006494, #0582CA, 10%#00A6FB);
 }
@@ -35,4 +34,12 @@
 .step:hover{
     background-color: #1c90d3;
     cursor: default;
+}
+
+.title {
+    font-size: 7em;
+}
+
+.description {
+    font-size: 1.2em;
 }
