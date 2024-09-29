@@ -4,7 +4,25 @@ import '../styles/Analysis.css';
 import { callGeminiAPI } from './Gemini';
 import { GaugeComponent } from 'react-gauge-component';
 
-
+const renderGauge = (value) => {
+    return (
+      <GaugeComponent
+        type="semicircle"
+        arc={{
+          colorArray: ['#B589D6', '#552586'],
+          padding: 0.02,
+          subArcs: [
+            { limit: 40 },
+            { limit: 60 },
+            { limit: 70 },
+            {}, {}, {}, {}
+          ]
+        }}
+        pointer={{ type: "blob", animationDelay: 0 }}
+        value={value !== undefined ? value : -1}  // Set default value if undefined
+      />
+    );
+  };
 
 function Analysis() {
     const [data, setData] = useState(null);
@@ -49,29 +67,51 @@ function Analysis() {
     
 
     return (
+        <div>
+        <h1>Improvement Gauges</h1>
+        <h4>These gauges represent where you can improve in increasing your credit score.
+            <b></b>
+            The higher gauges represent areas that you have an opportunity to use to improve your
+            credit and the lower gauges are areas you are doing well in.
+        </h4>
         <div className='analysis-container'>
             <div className='gauge-container'>
                 <h4>Credit Debt</h4>
-            <GaugeComponent
-          type="semicircle"
-          arc={{
-            colorArray: ['#B589D6', '#552586'],
-            padding: 0.02,
-            subArcs:
-              [
-                { limit: 40 },
-                { limit: 60 },
-                { limit: 70 },
-                {},
-                {},
-                {},
-                {}
-              ]
-          }}
-          pointer={{type: "blob", animationDelay: 0 }}
-          value={aiData && aiData.creditDebt !== undefined ? aiData.creditDebt : 1}  
-        />
+                {renderGauge(aiData && aiData.creditDebt)}
             </div>
+            <div className='gauge-container'>
+                <h4>Credit Utilization</h4>
+                {renderGauge(aiData && aiData.creditUtilization)}
+            </div>
+            <div className='gauge-container'>
+                <h4>Employment Status</h4>
+                {renderGauge(aiData && aiData.employmentStatus)}
+            </div>
+            <div className='gauge-container'>
+                <h4>Monthly Expenses</h4>
+                {renderGauge(aiData && aiData.monthlyExpenses)}
+            </div>
+            <div className='gauge-container'>
+                <h4>Monthly Income</h4>
+                {renderGauge(aiData && aiData.monthlyIncome)}
+            </div>
+            <div className='gauge-container'>
+                <h4>On Time Payments</h4>
+                {renderGauge(aiData && aiData.onTimePayments)}
+            </div>
+            <div className='gauge-container'>
+                <h4>Open Credit Accounts</h4>
+                {renderGauge(aiData && aiData.openCreditAccounts)}
+            </div>
+            <div className='gauge-container'>
+                <h4>Other Debt</h4>
+                {renderGauge(aiData && aiData.otherDebt)}
+            </div>
+            <div className='gauge-container'>
+                <h4>Total Savings</h4>
+                {renderGauge(aiData && aiData.totalSavings)}
+            </div>
+        </div>
         </div>
       );
     }
