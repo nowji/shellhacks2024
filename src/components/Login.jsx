@@ -8,7 +8,7 @@ function Login({ onLogin }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.warn("Here");
+
         const collectData = async () => {
             const result = await fetch("http://localhost:8000/login", {
                 method: "POST",
@@ -17,16 +17,14 @@ function Login({ onLogin }) {
                     'Content-Type':'application/json'
                 }
             });
+
             const data = await result.json();
-            console.warn(data);
             return data;
         }
         const data = await collectData();;
-        console.log(data)
+
         if(data.success){
           onLogin(data.user._id);
-          console.log(data.user._id);
-          console.log(localStorage.getItem('userID'));
           navigate('/dashboard');
         }
         else{

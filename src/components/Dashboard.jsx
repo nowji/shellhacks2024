@@ -17,7 +17,6 @@ function Dashboard() {
         loadData();
     }, []);
 
-    console.log(localStorage.getItem('userID'));
     const navigate = useNavigate(); // Initialize the useNavigate hook
 
     const handleBeginAnalysis = () => {

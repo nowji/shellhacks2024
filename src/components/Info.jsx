@@ -17,6 +17,7 @@ function Info() {
     otherDebt: '',
     totalSavings: ''
   });
+  const navigate = useNavigate();
 
   const [data, setData] = useState(null);
 
@@ -62,7 +63,7 @@ function Info() {
     }
     collectData();
 
-    console.log(formData); // You can handle the form submission here
+    navigate("/dashboard");
   };
 
 
