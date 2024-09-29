@@ -34,6 +34,20 @@ connectDB();
 const User = require('./server/models/User');
 const Data = require('./server/models/Data');
 
+// Retrieve info
+app.get("/info/:id", async (req, res) => {
+    try{
+        console.log("Here");
+        const { id } = req.params;
+        console.log(id);
+        const data = await Data.findOne({ userId: id }).sort({ createdAt: -1 });
+        console.log(data);
+        return res.status(200).json({success: true, data});
+    } catch(error){
+        return res.status(500).json({success: error});
+    }
+})
+
 // Handle info
 app.post("/info", async (req, res) => {
     try{

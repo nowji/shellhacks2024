@@ -3,6 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import '../styles/Dashboard.css';
 
 function Dashboard() {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        const loadData = async () => {
+            const userId = localStorage.getItem('userID');
+            const response = await fetch(`http://localhost:8000/info/${userId}`);
+            const data = await response.json();
+            setData(data); // Set the fetched data to state
+        };
+        loadData(); // Call loadData function
+    }, []);
 
     console.log(localStorage.getItem('userID'));
     const navigate = useNavigate(); // Initialize the useNavigate hook
@@ -19,6 +30,5 @@ function Dashboard() {
         </div>
       );
     }
-    
+
     export default Dashboard;
-    
