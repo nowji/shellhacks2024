@@ -1,6 +1,8 @@
 require('dotenv').config();
 
 const express = require("express");
+const mongoose = require("mongoose");
+const { ObjectId } = mongoose.Types;
 const app = express();
 const cors = require("cors");
 const bcrypt = require('bcrypt');
@@ -30,12 +32,18 @@ app.use(session({
 const connectDB = require('./server/config/db');
 connectDB();
 const User = require('./server/models/User');
+const Data = require('./server/models/Data');
 
 // Handle info
 app.post("/info", async (req, res) => {
     try{
-        
+        const { id, formData } = req.body;
+
+        const data = await Data.create(formData);
+
+        res.status(200).json({ success: true, data });
     } catch(error){
+        console.log(error);
         return res.status(500).json({success: error});
     }
 })

@@ -25,10 +25,25 @@ function Info() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const collectData = async () => {
+      let id = localStorage.getItem('userID');
+      formData.userId = id; // Add id to formData
+
+      const result = await fetch("http://localhost:8000/info", {
+        method: "POST",
+        body: JSON.stringify( { id, formData }),
+        headers:{
+          'Content-Type':'application/json'
+        }
+      });
+    }
+    collectData();
+
     console.log(formData); // You can handle the form submission here
   };
 
-  
+
   return (
   <div className='info-container'>
     <h2>Enter your Financial Information</h2>
@@ -106,4 +121,3 @@ function Info() {
 }
 
 export default Info;
-  
