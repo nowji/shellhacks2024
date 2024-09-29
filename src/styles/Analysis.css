@@ -1,7 +1,14 @@
+.analysis {
+    margin-top:17vh;
+}
+
 .analysis-container{
+    margin: 0px 155px;
+    margin-bottom: 10vh;
     display: grid;
     gap: 1px;
     grid-template-columns: repeat(3, 1fr);
+    width: 400px;
 }
 
 .gauge-container{

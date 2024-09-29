@@ -65,36 +65,16 @@ function Analysis() {
     const navigate = useNavigate(); // Initialize the useNavigate hook
 
     return (
-        <div>
+        <div class="analysis">
         <h1>Improvement Gauges</h1>
         <h4>These gauges represent where you can improve in increasing your credit score.
             <b></b>
-            The higher gauges represent areas that you have an opportunity to use to improve your
+             The higher gauges represent areas that you have an opportunity to use to improve your
             credit and the lower gauges are areas you are doing well in.
         </h4>
         <div className='analysis-container'>
             <div className='gauge-container'>
                 <h4>Credit Debt</h4>
-            <GaugeComponent
-          type="semicircle"
-          arc={{
-            colorArray: ['#B589D6', '#552586'],
-            padding: 0.02,
-            subArcs:
-              [
-                { limit: 40 },
-                { limit: 60 },
-                { limit: 70 },
-                {},
-                {},
-                {},
-                {}
-              ]
-          }}
-          pointer={{type: "blob", animationDelay: 0 }}
-          value={aiData && aiData.creditDebt !== undefined ? aiData.creditDebt : 1}
-        />
-            </div>
                 {renderGauge(aiData && aiData.creditDebt)}
             </div>
             <div className='gauge-container'>
@@ -129,6 +109,7 @@ function Analysis() {
                 <h4>Total Savings</h4>
                 {renderGauge(aiData && aiData.totalSavings)}
             </div>
+        </div>
         </div>
       );
     }
