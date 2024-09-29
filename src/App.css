@@ -13,6 +13,10 @@
   flex-direction: column;
 }
 
+.auth-container {
+  padding-top: 25vh;
+}
+
 form{
   padding: 5px;
 }
