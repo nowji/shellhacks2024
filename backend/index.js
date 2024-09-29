@@ -31,23 +31,14 @@ const connectDB = require('./server/config/db');
 connectDB();
 const User = require('./server/models/User');
 
-// Check if user has token
-/*const authMiddlewareLoggedOut = (req, res, next) => {
-    const token = req.cookies.token;
-
-    if(!token){
-        console.log("Not logged in");
-        return res.redirect('/login')
-    }
-
+// Handle info
+app.post("/info", async (req, res) => {
     try{
-        const decoded = jwt.verify(token, jwtSecret);
-        req.userID = decoded.userID;
-        next();
+        
     } catch(error){
-        return res.redirect('login');
+        return res.status(500).json({success: error});
     }
-}*/
+})
 
 // Handle login
 app.post("/login", async (req, res) => {
