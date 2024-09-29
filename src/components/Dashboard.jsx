@@ -13,8 +13,9 @@ function Dashboard() {
             const data = await response.json();
             console.log(data);
             setData(data.data); // Set the fetched data to state
+            setData(data);
         };
-        loadData(); // Call loadData function
+        loadData();
     }, []);
 
     console.log(localStorage.getItem('userID'));
