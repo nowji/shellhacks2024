@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Info.css';
 
@@ -17,6 +17,28 @@ function Info() {
     otherDebt: '',
     totalSavings: ''
   });
+
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+      const loadData = async () => {
+          const userId = localStorage.getItem('userID');
+          const response = await fetch(`http://localhost:8000/info/${userId}`);
+          const data = await response.json();
+          console.log(data.data);
+          setData(data.data);
+          if (data.data) {
+            setData(data.data);
+            setFormData(prevState => ({
+                ...prevState,
+                ...data.data // Spread the fetched data into formData
+            }));
+        }
+      };
+      loadData();
+  }, []);
+
+    console.log(localStorage.getItem('userID'));
 
   const handleChange = (e) => {
     const { name, value } = e.target;
