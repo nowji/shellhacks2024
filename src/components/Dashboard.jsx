@@ -72,6 +72,7 @@ function Dashboard() {
           )
         }
         <button className='begin-analysis-button' onClick={handleBeginAnalysis}>{data ? "Update" : "Begin Analysis"}</button>
+        {data ? <button className='begin-analysis-button'>{"Run Analysis"}</button> : <></>}
         </div>
       );
     }
