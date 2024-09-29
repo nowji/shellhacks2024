@@ -21,7 +21,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongo": "^0.1.0",
     "mongodb": "^6.9.0",
-    "mongoose": "^8.7.0"
+    "mongoose": "^8.7.0",
+    "react-gauge-component": "^1.2.61"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
