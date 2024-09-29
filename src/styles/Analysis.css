@@ -3,15 +3,28 @@
 }
 
 .analysis-container{
-    margin: 0px 155px;
-    margin-bottom: 10vh;
     display: grid;
     gap: 1px;
     grid-template-columns: repeat(3, 1fr);
     max-width: 1200px;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 .gauge-container{
     margin: 40px;
+}
+
+.desc {
+    font-size: 20px;
+}
+
+.desc-wrapper {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.analysis-title {
+    font-size: 45px;
+    margin-bottom: 40px;
 }

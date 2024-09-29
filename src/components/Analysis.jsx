@@ -66,12 +66,13 @@ function Analysis() {
 
     return (
         <div class="analysis">
-        <h1>Improvement Gauges</h1>
-        <h4>These gauges represent where you can improve in increasing your credit score.
-            <b></b>
-             The higher gauges represent areas that you have an opportunity to use to improve your
-            credit and the lower gauges are areas you are doing well in.
+        <h1 class="analysis-title">Improvement Gauges</h1>
+        <div class="desc-wrapper">
+        <h4 class="desc">These gauges represent areas you can improve in to increase your credit score.
+             The higher gauges represent areas that are more significantly lowering your credit.
+             Working on the higher ones first to more effectively improve your credit score!
         </h4>
+        </div>
         <div className='analysis-container'>
             <div className='gauge-container'>
                 <h4>Credit Debt</h4>
