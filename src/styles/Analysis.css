@@ -1,0 +1,14 @@
+.analysis-container{
+    background-color: #0582CA;
+    padding: 10vh;
+    border-radius: 15px;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* max-height: 50vh; */
+    text-align: center;
+    margin: 50px;
+    border: solid #051923 3px;
+}

@@ -6,6 +6,7 @@ import Dashboard from './components/Dashboard';
 import Info from './components/Info';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import Analysis from './components/Analysis';
 
 import './App.css';
 
@@ -43,7 +44,11 @@ function App() {
           />
           <Route
             path="/info"
-            element={userID  ? <Info/> : <Navigate to="/info" />}
+            element={userID  ? <Info/> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/analysis"
+            element={userID  ? <Analysis/> : <Navigate to="/login" />}
           />
           <Route
             path="/"

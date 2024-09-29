@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Dashboard.css';
 import { callGeminiAPI } from './Gemini';
+import { GaugeComponent } from 'react-gauge-component';
+
 
 
 function Dashboard() {
@@ -94,6 +96,27 @@ ${JSON.stringify(data)}`;
         }
         <button className='begin-analysis-button' onClick={handleBeginAnalysis}>{data ? "Update" : "Begin Analysis"}</button>
         {data ? <button className='begin-analysis-button' onClick={() => callGeminiAPI(prompt)}>{"Run Analysis"}</button> : <></>}
+
+        <GaugeComponent
+          type="semicircle"
+          arc={{
+            colorArray: ['#B589D6', '#552586'],
+            padding: 0.02,
+            subArcs:
+              [
+                { limit: 40 },
+                { limit: 60 },
+                { limit: 70 },
+                {},
+                {},
+                {},
+                {}
+              ]
+          }}
+          pointer={{type: "blob", animationDelay: 0 }}
+          value={50}
+        />
+
         </div>
       );
     }
