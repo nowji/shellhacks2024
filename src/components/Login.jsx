@@ -6,7 +6,7 @@ function Login({ onLogin }) {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.warn("Here");
         const collectData = async () => {
@@ -19,18 +19,18 @@ function Login({ onLogin }) {
             });
             const data = await result.json();
             console.warn(data);
+            return data;
         }
-        collectData();
-
-        /*if (email === 'a@a' && password === 'a') {
-            onLogin();
-            navigate('/dashboard');
+        const data = await collectData();;
+        console.log(data)
+        if(data.success){
+          alert("Success");
+          onLogin();
+          navigate('/dashboard');
         }
-        else {
-            alert("Email or Password incorrect");
-        }*/
-
-        //navigate("/dashboard");
+        else{
+          alert("Incorrect user or password")
+        }
     };
 
     return (
