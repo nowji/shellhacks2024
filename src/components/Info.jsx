@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Info.css';
 
-function Info() {
+function Info() { 
   const [formData, setFormData] = useState({
     age: '',
     country: '',

@@ -29,6 +29,7 @@ function Home() {
           placeholder="Enter your prompt here..." 
         />
         <button onClick={() => callGeminiAPI(prompt)}>Run Gemini Test</button>
+        <h1></h1>
         <div className='steps-container'>
           <div className='step'>
             <h4>
