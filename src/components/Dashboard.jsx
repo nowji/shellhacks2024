@@ -12,7 +12,7 @@ function Dashboard() {
             const response = await fetch(`http://localhost:8000/info/${userId}`);
             const data = await response.json();
             console.log(data);
-            setData(data.data); // Set the fetched data to state
+            setData(data.data);
             setData(data);
         };
         loadData();
