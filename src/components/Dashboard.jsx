@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Dashboard.css';
 
@@ -10,9 +10,9 @@ function Dashboard() {
             const userId = localStorage.getItem('userID');
             const response = await fetch(`http://localhost:8000/info/${userId}`);
             const data = await response.json();
-            setData(data); // Set the fetched data to state
+            setData(data);
         };
-        loadData(); // Call loadData function
+        loadData();
     }, []);
 
     console.log(localStorage.getItem('userID'));
