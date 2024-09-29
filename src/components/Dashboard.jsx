@@ -93,7 +93,7 @@ ${JSON.stringify(data)}`;
           )
         }
         <button className='begin-analysis-button' onClick={handleBeginAnalysis}>{data ? "Update" : "Begin Analysis"}</button>
-        {data ? <button className='begin-analysis-button'>{"Run Analysis"}</button> : <></>}
+        {data ? <button className='begin-analysis-button' onClick={() => callGeminiAPI(prompt)}>{"Run Analysis"}</button> : <></>}
         </div>
       );
     }
