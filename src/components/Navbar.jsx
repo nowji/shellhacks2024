@@ -14,7 +14,7 @@ function Navbar({ loggedIn, onLogout }) {
     return(
       <div className="navbar">
         <div className="navbar-left">
-          <h1><a className='logo' onClick={() => HandleNav('/home')}>Shellhacks 2024</a></h1>
+          <h1><a className='logo' onClick={() => HandleNav('/')}>Shellhacks 2024</a></h1>
         </div>
         <div className="navbar-right">
           { loggedIn && (<button className="navbar-button" onClick={onLogout}>Logout</button>)}

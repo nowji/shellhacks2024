@@ -24,8 +24,9 @@ function Login({ onLogin }) {
         const data = await collectData();;
         console.log(data)
         if(data.success){
-          alert("Success");
-          onLogin();
+          onLogin(data.user._id);
+          console.log(data.user._id);
+          console.log(localStorage.getItem('userID'));
           navigate('/dashboard');
         }
         else{

@@ -10,40 +10,42 @@ import Home from './components/Home';
 import './App.css';
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userID, setUserID] = useState(() => localStorage.getItem('userID') || null);
 
-  const handleLogin = () => {
-    setIsAuthenticated(true);
+
+  const handleLogin = (id) => {
+    localStorage.setItem('userID', id);
+    setUserID(id);
   };
 
   const handleLogout = () => {
-    setIsAuthenticated(false);
+    setUserID(null);
   };
 
   return (
     
       <Router>
-        <Navbar loggedIn={isAuthenticated} onLogout={handleLogout}/>
+        <Navbar loggedIn={userID} onLogout={handleLogout}/>
         <div className='App'>
         <Routes>
           <Route
             path="/login"
-            element={isAuthenticated ? <Navigate to="/dashboard" /> : <Login onLogin={handleLogin} />}
+            element={userID  ? <Navigate to="/dashboard" /> : <Login onLogin={handleLogin} />}
           />
           <Route
             path="/register"
-            element={isAuthenticated ? <Navigate to="/dashboard" /> : <Register />}
+            element={userID  ? <Navigate to="/dashboard" /> : <Register />}
           />
           <Route
             path="/dashboard"
-            element={isAuthenticated ? <Dashboard /> : <Navigate to="/login" />}
+            element={userID  ? <Dashboard /> : <Navigate to="/login" />}
           />
           <Route
             path="/info"
-            element={isAuthenticated ? <Info/> : <Navigate to="/info" />}
+            element={userID  ? <Info/> : <Navigate to="/info" />}
           />
           <Route
-            path="/home"
+            path="/"
             element={<Home />}
           />
           <Route path="*" element={<Navigate to="/home" />} />

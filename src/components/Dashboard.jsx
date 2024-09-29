@@ -4,6 +4,7 @@ import '../styles/Dashboard.css';
 
 function Dashboard() {
 
+    console.log(localStorage.getItem('userID'));
     const navigate = useNavigate(); // Initialize the useNavigate hook
 
     const handleBeginAnalysis = () => {
