@@ -33,8 +33,12 @@ function Home() {
             </h4>
           </div>
         </div>
-
-
+        <h1 class="about-title">About</h1>
+        <p class="about-p">This app is a product of Neema Owji, James Phillips, and Miraziz Akmalov participating in the 2024
+        Shellhacks compeition. Our mission was to address the disproportionate financial barriers faced by minorities, offering clear and actionable steps to
+        improve credit scores, manage debt, and build strong financial habits. Using the MERN stack integrated
+        with the Google Cloud Platform and Gemini language model, this interactive and straightfoward application can
+        dynamically analyze credit habits in order to give a step in the right direction for those in tough spots.  </p>
       </div>
     );
   }

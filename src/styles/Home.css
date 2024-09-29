@@ -8,7 +8,6 @@
   min-height: 70vh;
   text-align: center;
   padding: 5px;
-  height: 100px;
   background-image: linear-gradient(79deg, #006494, #0582CA, 10%#00A6FB);
 }
 
@@ -45,4 +44,16 @@
 
 .description {
     font-size: 1.2em;
+}
+
+.about-title {
+    font-size: 7em;
+    margin-top: 1.5em;
+    margin-bottom: 0.3em;
+}
+
+.about-p {
+    margin-top: 0;
+    width: 75%;
+    font-size: 1.5em;
 }
