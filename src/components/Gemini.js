@@ -20,6 +20,5 @@ export const callGeminiAPI = async (inputData) => {
   let cleanResponse = cleanApiResponse(result.response.text());
   console.log(cleanResponse);
   console.log(JSON.parse(cleanResponse));
-
   return JSON.parse(cleanResponse);
 };
