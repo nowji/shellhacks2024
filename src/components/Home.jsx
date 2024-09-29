@@ -16,8 +16,13 @@ function Home() {
       loadData();
   }, []);
 
-  const prompt = `I'm going to provide you with some financial characteristics of a person. I want you to give me a value from 0 to 1.0 for each characteristics besides the age, country, or current credit score based on how significantly they might be negatively effecting the persons credit in the future. You can also think of it as the things that most positively would effect their credit if the person changed them. In other words, the higher the 'derivative' of future credit with respect to that characteristic, the closer the value for the characteristic should be to 1.0. Even though you're not giving the all of the values a rating, I want you to keep all of the characteristics in mind when considering the ratings. The format of your answer should be a json. Don't provide any explination. Just the json. Don't include '''json before or after your answer. Here's an example:
+  const prompt = `I'm developing a program that takes info from a user and helps them to improve their financial attributes with the goal of increasing their credit score. I'm going to give you a stringified JSON of 12 financial attributes of a user. I want you to assign each attribute a value between 0 and 100. This value will signify how much improvement that attribute needs. It should take in to account how much that attribute effects credit, how poor the user's number for that attribute is, and also be relative to the other attributes. This means that even if a number if very bad, if it doesn't effect credit as much as the other attributes, that should be taken in to account. Or, if an attribute isn't too bad, but all the other attributes are very good, that attribute is relatively bad and should be given a higher value. You need to consider the effect the attributes and their values might have on credit. A high income would have a positive impact and therefore a low negative effect on credit.
 
+Important clarifications: You will not give a score for age, country, or current credit score. creditUtilization and onTimePayments are expressed as a percent (if they have a 100 for onTimePayments, they've paid off 100% of their payments on time). creditDebt, monthlyExpenses, monthlyIncome, totalSavings, and otherDebt are expressed in a dollar amount.
+
+The output should be formatted as a JSON that can be turned in to an actual JSON without error. Do not include anything other than the curly brackets and key value pairs inside.
+
+Here is an example output. The numbers are not accurate. It is just a format example:
 {
   "creditDebt": 0.0,
   "creditUtilization": 0.8,
@@ -30,10 +35,7 @@ function Home() {
   "otherDebt": 0
 }
 
-Your answer should have exactly 9 fields consistent of every field in the example json. Those numbers aren't accurate. Just an example.
-
-Here's the data set:
-
+Here's the actual data set:
 ${JSON.stringify(data)}`;
 
   return (
