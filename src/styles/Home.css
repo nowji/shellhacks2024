@@ -48,7 +48,7 @@
 
 .about-title {
     font-size: 7em;
-    margin-top: 1.5em;
+    margin-top: 1em;
     margin-bottom: 0.3em;
 }
 
@@ -56,4 +56,5 @@
     margin-top: 0;
     width: 75%;
     font-size: 1.5em;
+    margin-bottom: 4.5em;
 }

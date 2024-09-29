@@ -24,7 +24,7 @@ function Home() {
           </div>
           <div className='step'>
             <h4>
-              2. Run the analysis to see where your strengths and weaknesses are for you to improve your credit
+              2. Run the analysis to see where your strengths and weaknesses lie in order to improve your credit
             </h4>
           </div>
           <div className='step'>
@@ -38,7 +38,8 @@ function Home() {
         Shellhacks compeition. Our mission was to address the disproportionate financial barriers faced by minorities, offering clear and actionable steps to
         improve credit scores, manage debt, and build strong financial habits. Using the MERN stack integrated
         with the Google Cloud Platform and Gemini language model, this interactive and straightfoward application can
-        dynamically analyze credit habits in order to give a step in the right direction for those in tough spots.  </p>
+         analyze credit habits in order to give a push in the right direction for those in tough spots. Regardless
+        of background or education, this application provides an accessible route to a financially fluent world. </p>
       </div>
     );
   }
