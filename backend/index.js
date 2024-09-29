@@ -50,9 +50,16 @@ app.post("/info", async (req, res) => {
     try{
         const { id, formData } = req.body;
 
+        const found = await Data.findOne({ userId: id });
+
+        if(found){
+            updatedData = await Data.findOneAndUpdate(formData);
+            return res.status(200).json({ success: true, updatedData });
+        }
+
         const data = await Data.create(formData);
 
-        res.status(200).json({ success: true, data });
+        return res.status(200).json({ success: true, data });
     } catch(error){
         console.log(error);
         return res.status(500).json({success: error});
