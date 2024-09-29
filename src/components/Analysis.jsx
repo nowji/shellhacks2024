@@ -130,7 +130,6 @@ function Analysis() {
                 {renderGauge(aiData && aiData.totalSavings)}
             </div>
         </div>
-        </div>
       );
     }
 
