@@ -7,7 +7,7 @@ import { GaugeComponent } from 'react-gauge-component';
 const renderGauge = (value) => {
     return (
       <GaugeComponent
-        type="semicircle"
+        type="semicircle" 
         arc={{
           colorArray: ['#B589D6', '#552586'],
           padding: 0.02,
